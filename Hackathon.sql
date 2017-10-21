@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 21, 2017 at 02:36 PM
+-- Generation Time: Oct 21, 2017 at 04:32 PM
 -- Server version: 5.1.41
 -- PHP Version: 5.3.1
 
@@ -78,6 +78,30 @@ CREATE TABLE IF NOT EXISTS `login_details` (
 
 --
 -- Dumping data for table `login_details`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `passenger`
+--
+
+CREATE TABLE IF NOT EXISTS `passenger` (
+  `passenger_ID` int(11) NOT NULL,
+  `first_name` varchar(50) NOT NULL,
+  `last_name` varchar(50) NOT NULL,
+  `phone_number` varchar(20) NOT NULL,
+  `email_address` varchar(50) NOT NULL,
+  `address_lines` varchar(100) NOT NULL,
+  `city` varchar(50) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  PRIMARY KEY (`passenger_ID`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `passenger`
 --
 
 

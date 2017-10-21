@@ -6,7 +6,7 @@
 - http://www.phpmyadmin.net
 -
 - Host: localhost
-- Generation Time: Oct 21, 2017 at 02:36 PM
+- Generation Time: Oct 21, 2017 at 04:32 PM
 - Server version: 5.1.41
 - PHP Version: 5.3.1
 -->
@@ -18,4 +18,5 @@
   <!-- Table flights -->
   <!-- Table flight_passenger -->
   <!-- Table login_details -->
+  <!-- Table passenger -->
 </Hackathon>
