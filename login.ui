@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>575</width>
-    <height>817</height>
+    <width>560</width>
+    <height>720</height>
    </rect>
   </property>
   <property name="font">
@@ -18,21 +18,106 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="layoutDirection">
+   <enum>Qt::LeftToRight</enum>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(0, 0, 0);</string>
+  </property>
+  <property name="locale">
+   <locale language="English" country="UnitedKingdom"/>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QPushButton" name="btn_login">
     <property name="geometry">
      <rect>
       <x>80</x>
-      <y>580</y>
+      <y>550</y>
       <width>400</width>
       <height>50</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0, 0, 0);
+background-color: rgb(255, 34, 34);</string>
     </property>
     <property name="text">
      <string>Login</string>
     </property>
    </widget>
-   <widget class="QTextEdit" name="txtUsername">
+   <widget class="QLabel" name="usr_lbl">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>300</y>
+      <width>401</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 34, 34);</string>
+    </property>
+    <property name="text">
+     <string>Username</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="pass_lbl">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>430</y>
+      <width>401</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 34, 34);</string>
+    </property>
+    <property name="text">
+     <string>Password</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>10</y>
+      <width>401</width>
+      <height>271</height>
+     </rect>
+    </property>
+    <property name="sizeIncrement">
+     <size>
+      <width>5</width>
+      <height>5</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 34, 34);</string>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/newPrefix/Logo.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="u_name_input">
     <property name="geometry">
      <rect>
       <x>80</x>
@@ -41,11 +126,22 @@
       <height>60</height>
      </rect>
     </property>
-    <property name="documentTitle">
-     <string/>
+    <property name="font">
+     <font>
+      <pointsize>18</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 34, 34);</string>
+    </property>
+    <property name="cursorPosition">
+     <number>0</number>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
     </property>
    </widget>
-   <widget class="QTextEdit" name="txtUsername_2">
+   <widget class="QLineEdit" name="pass_input">
     <property name="geometry">
      <rect>
       <x>80</x>
@@ -54,54 +150,63 @@
       <height>60</height>
      </rect>
     </property>
-    <property name="documentTitle">
+    <property name="font">
+     <font>
+      <pointsize>18</pointsize>
+     </font>
+    </property>
+    <property name="mouseTracking">
+     <bool>true</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 34, 34);</string>
+    </property>
+    <property name="echoMode">
+     <enum>QLineEdit::Password</enum>
+    </property>
+    <property name="placeholderText">
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="lblUsername">
+   <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>300</y>
-      <width>450</width>
-      <height>50</height>
+      <x>100</x>
+      <y>620</y>
+      <width>191</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 34, 34);</string>
+    </property>
+    <property name="text">
+     <string>Don't have an account?</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_login_sign_up">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>614</y>
+      <width>151</width>
+      <height>32</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>16</pointsize>
+      <pointsize>8</pointsize>
      </font>
     </property>
-    <property name="text">
-     <string>Please Enter Your Username</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="lblPassword">
-    <property name="geometry">
-     <rect>
-      <x>80</x>
-      <y>430</y>
-      <width>450</width>
-      <height>50</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>16</pointsize>
-     </font>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0, 0, 0);
+background-color: rgb(255, 34, 34);</string>
     </property>
     <property name="text">
-     <string>Please Enter Your Password</string>
-    </property>
-   </widget>
-   <widget class="QGraphicsView" name="graphicsView">
-    <property name="geometry">
-     <rect>
-      <x>80</x>
-      <y>70</y>
-      <width>401</width>
-      <height>192</height>
-     </rect>
+     <string>Sign up</string>
     </property>
    </widget>
   </widget>
@@ -110,13 +215,15 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>575</width>
-     <height>51</height>
+     <width>560</width>
+     <height>31</height>
     </rect>
    </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="test.qrc"/>
+ </resources>
  <connections/>
 </ui>
