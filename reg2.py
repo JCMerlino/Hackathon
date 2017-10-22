@@ -144,18 +144,48 @@ class Ui_Reg_2(object):
         msgBox.setStandardButtons(QtGui.QMessageBox.Ok)
         msgBox.exec_()
 
+    def checkEmail(self, email):
+        if email.count("@") != 1:
+            if email != "":
+                self.msgBox("Warning", "Email format not valid.")
+            return ""
+        else:
+            email_list = email.split("@")
+            domain = email_list[1]
+            if 1 <= domain.count(".") <= 2:
+                return email
+            else:
+                self.msgBox("Warning", "Email format not valid.")
+                return ""
+
     def getInfo(self):
         name = self.name_input.text()
         age = self.age_input.text()
+        try:
+            test_age = int(age)  # lint:ok
+        except:
+            if age != "":
+                self.msgBox("Warning", "Age must be an integer.")
+                age = ""
         gender = self.gender_input.text()
+        gender = gender.upper()
+        if (gender != "M") and (gender != "F"):
+            if gender != "":
+                self.msgBox("Warning", "Please enter M or F.")
+                gender = ""
         email = self.email_input.text()
+        email = self.checkEmail(email)
         location = self.loc_input.text()
         msg_lnk = self.msg_lnk_input.text()
+        if msg_lnk[0:5] != "m.me/":
+            if msg_lnk != "":
+                self.msgBox("Warning", "Please enter a link starting with m.me/ .")
+                msg_lnk = ""
         if (name == "") or (age == "") or (gender == "") or (email == "") or (location == "") or (msg_lnk == ""):
             self.msgBox("Warning!", "Please fill in all of the fields.")
         else:
             dtbs = open("Database.txt", "a")
-            dtbs.writelines([name + "\n", age + "\n", gender + "\n", email + "\n", location + "\n", msg_lnk])
+            dtbs.writelines([name + "\n", age + "\n", gender + "\n", email + "\n", location + "\n", msg_lnk + "\n"])
             dtbs.close()
             print("Registration completed.")
             Reg_2.close()
