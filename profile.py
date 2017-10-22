@@ -66,3 +66,11 @@ class Ui_MainWindow(object):
         self.actionSettings.setText(_translate("MainWindow", "Settings", None))
         self.actionLog_out.setText(_translate("MainWindow", "Log out", None))
 
+if __name__ == "__main__":
+    import sys
+    app = QtGui.QApplication(sys.argv)
+    profile_window = QtGui.QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(profile_window)
+    profile_window.show()
+    sys.exit(app.exec_())
