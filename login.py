@@ -150,7 +150,7 @@ class Ui_login(object):
         dtbs.close()
         if found and ((encrypt(password) + "\n") == line):
             print("Log in succeeded!")
-            File = open("Current_Username.txt","w")
+            File = open("Current_Username.txt", "w")
             File.write(username)
             File.close()
         elif found and encrypt(password) != line:

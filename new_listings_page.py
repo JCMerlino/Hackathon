@@ -16,11 +16,13 @@ except AttributeError:
 
 try:
     _encoding = QtGui.QApplication.UnicodeUTF8
+
     def _translate(context, text, disambig):
         return QtGui.QApplication.translate(context, text, disambig, _encoding)
 except AttributeError:
-    def _translate(context, text, disambig):
+    def _translate(context, text, disambig):  # lint:ok
         return QtGui.QApplication.translate(context, text, disambig)
+
 
 class Ui_MainWindow(object):
 
@@ -30,7 +32,7 @@ class Ui_MainWindow(object):
         end = len(final_data)
         list1 = []
         for i in range(0, end, 3):
-            list1.append([final_data[i].strip("\n"), final_data[i + 1].strip("\n"), final_data[i + 2],])
+            list1.append([final_data[i].strip("\n"), final_data[i + 1].strip("\n"), final_data[i + 2]])
         for i in range(len(list1)):
             list1[i] = "\n".join(list1[i])
         self.label_6.setText("\n".join(list1))
@@ -39,7 +41,6 @@ class Ui_MainWindow(object):
         MainWindow.close()
         import os
         os.system("python post_a_listing.py")
-
 
     def setupUi(self, MainWindow):
         MainWindow.setObjectName(_fromUtf8("MainWindow"))
@@ -61,7 +62,7 @@ class Ui_MainWindow(object):
         self.pushButton.setStyleSheet(_fromUtf8("background-color: rgb(255, 34, 34);"))
         self.pushButton.setObjectName(_fromUtf8("pushButton"))
         self.label_6 = QtGui.QLabel(self.centralwidget)
-        self.label_6.setGeometry(QtCore.QRect(210, 280, 631, 411))
+        self.label_6.setGeometry(QtCore.QRect(210, 250, 631, 500))
         font = QtGui.QFont()
         font.setPointSize(14)
         self.label_6.setFont(font)
@@ -69,7 +70,7 @@ class Ui_MainWindow(object):
         self.label_6.setText(_fromUtf8(""))
         self.label_6.setObjectName(_fromUtf8("label_6"))
         self.label_2 = QtGui.QLabel(self.centralwidget)
-        self.label_2.setGeometry(QtCore.QRect(380, 190, 321, 101))
+        self.label_2.setGeometry(QtCore.QRect(380, 150, 400, 101))
         font = QtGui.QFont()
         font.setPointSize(26)
         font.setBold(True)
