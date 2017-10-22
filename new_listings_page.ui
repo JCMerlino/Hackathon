@@ -45,6 +45,11 @@
       <height>41</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(255, 34, 34);</string>
     </property>
@@ -106,6 +111,9 @@
      <width>1111</width>
      <height>26</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 34, 34);</string>
    </property>
    <widget class="QMenu" name="menuProfile">
     <property name="layoutDirection">

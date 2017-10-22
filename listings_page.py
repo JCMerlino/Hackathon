@@ -40,6 +40,7 @@ class Ui_MainWindow(object):
         import os
         os.system("python post_a_listing.py")
 
+
     def setupUi(self, MainWindow):
         MainWindow.setObjectName(_fromUtf8("MainWindow"))
         MainWindow.resize(1111, 860)
@@ -54,7 +55,10 @@ class Ui_MainWindow(object):
         self.label.setObjectName(_fromUtf8("label"))
         self.pushButton = QtGui.QPushButton(self.centralwidget)
         self.pushButton.setGeometry(QtCore.QRect(650, 750, 341, 41))
-        self.pushButton.setStyleSheet(_fromUtf8("background-color: rgb(255, 34, 34); font-size: 14pt;"))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        self.pushButton.setFont(font)
+        self.pushButton.setStyleSheet(_fromUtf8("background-color: rgb(255, 34, 34);"))
         self.pushButton.setObjectName(_fromUtf8("pushButton"))
         self.label_6 = QtGui.QLabel(self.centralwidget)
         self.label_6.setGeometry(QtCore.QRect(210, 280, 631, 411))
@@ -77,6 +81,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtGui.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 1111, 26))
+        self.menubar.setStyleSheet(_fromUtf8("background-color: rgb(255, 34, 34);"))
         self.menubar.setObjectName(_fromUtf8("menubar"))
         self.menuProfile = QtGui.QMenu(self.menubar)
         self.menuProfile.setLayoutDirection(QtCore.Qt.RightToLeft)
