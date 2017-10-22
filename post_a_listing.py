@@ -22,8 +22,23 @@ except AttributeError:
     def _translate(context, text, disambig):
         return QtGui.QApplication.translate(context, text, disambig)
 
-class Ui_MainWindow(object):
+class posting_listing(object):
+
+    def button_post(self):
+        from listings_page import get_info
+        tempListingTitle = self.lineEdit.text()
+        tempDate = self.dateTimeEdit.text()
+        tempDescription = self.lineEdit_2.text()
+
+        posting_listing.get_info(self,tempListingTitle,tempDate,tempDescription)
+
+    def back_to_hub(self):
+        MainWindow.close()
+        import os
+        os.system("python listings_page.py")
+
     def setupUi(self, MainWindow):
+
         MainWindow.setObjectName(_fromUtf8("MainWindow"))
         MainWindow.resize(1111, 860)
         MainWindow.setLayoutDirection(QtCore.Qt.LeftToRight)
@@ -58,12 +73,6 @@ class Ui_MainWindow(object):
         font.setPointSize(16)
         self.label_4.setFont(font)
         self.label_4.setObjectName(_fromUtf8("label_4"))
-        self.plainTextEdit = QtGui.QPlainTextEdit(self.centralwidget)
-        self.plainTextEdit.setGeometry(QtCore.QRect(300, 400, 381, 231))
-        self.plainTextEdit.setObjectName(_fromUtf8("plainTextEdit"))
-        self.plainTextEdit_2 = QtGui.QPlainTextEdit(self.centralwidget)
-        self.plainTextEdit_2.setGeometry(QtCore.QRect(280, 250, 401, 31))
-        self.plainTextEdit_2.setObjectName(_fromUtf8("plainTextEdit_2"))
         self.pushButton = QtGui.QPushButton(self.centralwidget)
         self.pushButton.setGeometry(QtCore.QRect(580, 660, 101, 41))
         font = QtGui.QFont()
@@ -76,6 +85,12 @@ class Ui_MainWindow(object):
         font.setPointSize(14)
         self.pushButton_2.setFont(font)
         self.pushButton_2.setObjectName(_fromUtf8("pushButton_2"))
+        self.lineEdit = QtGui.QLineEdit(self.centralwidget)
+        self.lineEdit.setGeometry(QtCore.QRect(280, 251, 401, 31))
+        self.lineEdit.setObjectName(_fromUtf8("lineEdit"))
+        self.lineEdit_2 = QtGui.QLineEdit(self.centralwidget)
+        self.lineEdit_2.setGeometry(QtCore.QRect(280, 390, 401, 241))
+        self.lineEdit_2.setObjectName(_fromUtf8("lineEdit_2"))
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtGui.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 1111, 26))
@@ -98,6 +113,9 @@ class Ui_MainWindow(object):
         self.menuProfile.addAction(self.actionLog_out)
         self.menubar.addAction(self.menuProfile.menuAction())
 
+        self.pushButton_2.clicked.connect(self.back_to_hub)
+        self.pushButton.clicked.connect(self.button_post)
+
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
@@ -117,7 +135,7 @@ if __name__ == "__main__":
     import sys
     app = QtGui.QApplication(sys.argv)
     MainWindow = QtGui.QMainWindow()
-    ui = Ui_MainWindow()
+    ui = posting_listing()
     ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())
