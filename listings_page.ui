@@ -117,44 +117,56 @@
      <string>picture4</string>
     </property>
    </widget>
-   <widget class="QPlainTextEdit" name="plainTextEdit">
+   <widget class="QLabel" name="label_6">
     <property name="geometry">
      <rect>
-      <x>183</x>
+      <x>190</x>
       <y>290</y>
-      <width>521</width>
+      <width>511</width>
       <height>91</height>
      </rect>
     </property>
+    <property name="text">
+     <string/>
+    </property>
    </widget>
-   <widget class="QPlainTextEdit" name="plainTextEdit_2">
+   <widget class="QLabel" name="label_7">
     <property name="geometry">
      <rect>
-      <x>180</x>
+      <x>190</x>
       <y>410</y>
-      <width>521</width>
+      <width>511</width>
       <height>91</height>
      </rect>
     </property>
+    <property name="text">
+     <string/>
+    </property>
    </widget>
-   <widget class="QPlainTextEdit" name="plainTextEdit_3">
+   <widget class="QLabel" name="label_8">
     <property name="geometry">
      <rect>
-      <x>180</x>
+      <x>190</x>
       <y>530</y>
-      <width>521</width>
+      <width>511</width>
       <height>91</height>
      </rect>
     </property>
+    <property name="text">
+     <string/>
+    </property>
    </widget>
-   <widget class="QPlainTextEdit" name="plainTextEdit_4">
+   <widget class="QLabel" name="label_9">
     <property name="geometry">
      <rect>
-      <x>180</x>
-      <y>640</y>
-      <width>521</width>
+      <x>190</x>
+      <y>650</y>
+      <width>511</width>
       <height>91</height>
      </rect>
+    </property>
+    <property name="text">
+     <string/>
     </property>
    </widget>
   </widget>

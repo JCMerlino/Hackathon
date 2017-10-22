@@ -25,12 +25,15 @@ except AttributeError:
 class posting_listing(object):
 
     def button_post(self):
-        from listings_page import get_info
         tempListingTitle = self.lineEdit.text()
-        tempDate = self.dateTimeEdit.text()
+        tempDate = str(self.dateTimeEdit.text())
         tempDescription = self.lineEdit_2.text()
 
-        posting_listing.get_info(self,tempListingTitle,tempDate,tempDescription)
+        my_listings = open("my_listings.txt", "a")
+        my_listings.writelines([tempListingTitle + "\n", tempDate + "\n", tempDescription + "\n"])
+        my_listings.close()
+        self.back_to_hub()
+
 
     def back_to_hub(self):
         MainWindow.close()

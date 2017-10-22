@@ -7,7 +7,7 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt4 import QtCore, QtGui
-from post_a_listing import *
+import post_a_listing as fl
 
 try:
 	_fromUtf8 = QtCore.QString.fromUtf8
@@ -25,10 +25,19 @@ except AttributeError:
 
 class Ui_MainWindow(object):
 
-	#def get_info(self,title,date,description):
-		#self.title = title
-		#self.date = date
-		#self.description = description
+	def displaying(self):
+		temp = open("my_listings.txt", "r")
+		final_data = temp.readlines()
+		end = len(final_data)
+		list1 = []
+		for i in range(0, end, 3):
+			list1.append([final_data[i].strip("\n"), final_data[i + 1].strip("\n"), final_data[i + 2],])
+		for i in range(len(list1)):
+			list1[i] = "\n".join(list1[i])
+		print(list1)
+		self.label_6.setText("\n".join(list1))
+
+
 
 	def post_listing(self):
 		MainWindow.close()
@@ -67,7 +76,7 @@ class Ui_MainWindow(object):
 		self.label_5.setGeometry(QtCore.QRect(30, 650, 101, 91))
 		self.label_5.setObjectName(_fromUtf8("label_5"))
 		self.label_6 = QtGui.QLabel(self.centralwidget)
-		self.label_6.setGeometry(QtCore.QRect(190, 290, 511, 91))
+		self.label_6.setGeometry(QtCore.QRect(190, 290, 511, 400))
 		self.label_6.setText(_fromUtf8(""))
 		self.label_6.setObjectName(_fromUtf8("label_6"))
 		self.label_7 = QtGui.QLabel(self.centralwidget)
@@ -105,7 +114,8 @@ class Ui_MainWindow(object):
 		self.menubar.addAction(self.menuProfile.menuAction())
 
 		self.pushButton.clicked.connect(self.post_listing)
-		self.label_6.setText(title,date,description)
+
+		self.displaying()
 
 
 		self.retranslateUi(MainWindow)
