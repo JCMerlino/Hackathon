@@ -122,6 +122,9 @@ class Ui_Reg_1(object):
 
     def getInfo(self):
         username = self.usr_input.text()
+        File = open("Current_Username.txt","w")
+        File.write(username)
+        File.close()
         dtbs = open("Database.txt", "r")
         username_taken = False
         while not username_taken:
