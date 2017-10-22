@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1111</width>
+    <width>1280</width>
     <height>860</height>
    </rect>
   </property>
@@ -43,9 +43,9 @@ color: rgb(255, 34, 34);</string>
    <widget class="QPushButton" name="Edit_profile_Button">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>180</y>
-      <width>771</width>
+      <x>430</x>
+      <y>210</y>
+      <width>390</width>
       <height>101</height>
      </rect>
     </property>
@@ -58,6 +58,9 @@ color: rgb(255, 34, 34);</string>
     </property>
     <property name="cursor">
      <cursorShape>OpenHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>EDIT PROFILE</string>
@@ -66,7 +69,7 @@ color: rgb(255, 34, 34);</string>
    <widget class="QPushButton" name="Your_Listings_Button">
     <property name="geometry">
      <rect>
-      <x>140</x>
+      <x>120</x>
       <y>390</y>
       <width>381</width>
       <height>101</height>
@@ -81,6 +84,9 @@ color: rgb(255, 34, 34);</string>
     </property>
     <property name="cursor">
      <cursorShape>OpenHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>YOUR LISTINGS</string>
@@ -89,7 +95,7 @@ color: rgb(255, 34, 34);</string>
    <widget class="QPushButton" name="Post_Listing_Button">
     <property name="geometry">
      <rect>
-      <x>530</x>
+      <x>720</x>
       <y>390</y>
       <width>381</width>
       <height>101</height>
@@ -105,6 +111,9 @@ color: rgb(255, 34, 34);</string>
     <property name="cursor">
      <cursorShape>OpenHandCursor</cursorShape>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
     <property name="text">
      <string>POST A LISTING</string>
     </property>
@@ -112,7 +121,7 @@ color: rgb(255, 34, 34);</string>
    <widget class="QPushButton" name="View_Events_Button">
     <property name="geometry">
      <rect>
-      <x>530</x>
+      <x>720</x>
       <y>530</y>
       <width>381</width>
       <height>101</height>
@@ -127,6 +136,9 @@ color: rgb(255, 34, 34);</string>
     </property>
     <property name="cursor">
      <cursorShape>OpenHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>VIEW YOUR EVENTS</string>
@@ -135,7 +147,7 @@ color: rgb(255, 34, 34);</string>
    <widget class="QPushButton" name="Manage_Listings_Button">
     <property name="geometry">
      <rect>
-      <x>140</x>
+      <x>120</x>
       <y>530</y>
       <width>381</width>
       <height>101</height>
@@ -151,6 +163,9 @@ color: rgb(255, 34, 34);</string>
     <property name="cursor">
      <cursorShape>OpenHandCursor</cursorShape>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
     <property name="text">
      <string>MANAGE LISTINGS</string>
     </property>
@@ -158,10 +173,10 @@ color: rgb(255, 34, 34);</string>
    <widget class="QPushButton" name="Listings_Button">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>710</y>
-      <width>771</width>
-      <height>101</height>
+      <x>120</x>
+      <y>680</y>
+      <width>990</width>
+      <height>100</height>
      </rect>
     </property>
     <property name="font">
@@ -173,6 +188,9 @@ color: rgb(255, 34, 34);</string>
     </property>
     <property name="cursor">
      <cursorShape>OpenHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>BACK TO LISTINGS</string>
@@ -184,8 +202,8 @@ color: rgb(255, 34, 34);</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1111</width>
-     <height>18</height>
+     <width>1280</width>
+     <height>31</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuProfile">

@@ -16,11 +16,13 @@ except AttributeError:
 
 try:
     _encoding = QtGui.QApplication.UnicodeUTF8
+
     def _translate(context, text, disambig):
         return QtGui.QApplication.translate(context, text, disambig, _encoding)
 except AttributeError:
-    def _translate(context, text, disambig):
+    def _translate(context, text, disambig):  # lint:ok
         return QtGui.QApplication.translate(context, text, disambig)
+
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -167,32 +169,25 @@ class Ui_MainWindow(object):
         self.actionSettings.setText(_translate("MainWindow", "Settings", None))
         self.actionLog_out.setText(_translate("MainWindow", "Log out", None))
 
-
     def Return_Profile_Fun(self):
         MainWindow.close()
         import os
         os.system("python profile_manager.py")
-        
+
     def Update_All_Fun(self):
         MainWindow.close()
-
-        File = open("Current_Username.txt","r")
+        File = open("Current_Username.txt", "r")
         username = File.readline()
-        
-
         Name = ""
         FirstName = self.First_Name_ID.text()
         LastName = self.Last_Name_ID.text()
         Location = self.Locaion_ID.text()
         Link = self.Messenger_Link_ID.text()
 
-
         if FirstName != "" and LastName != "":
-            Name = (str(FirstName) + " " + str(LastName))                            
+            Name = (str(FirstName) + " " + str(LastName))
 
-
-
-        dtbs = open("Database.txt","r")
+        dtbs = open("Database.txt", "r")
         found = False
         list1 = []
         list2 = []
@@ -211,7 +206,7 @@ class Ui_MainWindow(object):
                 list2.append(line)
             pos += 1
         dtbs.close()
-        
+
         if Name != "":
             list1[2] = Name
         if Location != "":
@@ -222,7 +217,7 @@ class Ui_MainWindow(object):
         dtbs = open("Database.txt", "w")
 
         dtbs.writelines(list2)
-        
+
         for i in range(8):
             if i == 0:
                 dtbs.write("@" + list1[i] + "\n")
@@ -234,8 +229,6 @@ class Ui_MainWindow(object):
         import os
         os.system("python profile_manager.py")
 
-
-
 if __name__ == "__main__":
     import sys
     app = QtGui.QApplication(sys.argv)
@@ -244,4 +237,3 @@ if __name__ == "__main__":
     ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())
-

@@ -187,8 +187,9 @@ class Ui_Reg_2(object):
             dtbs = open("Database.txt", "a")
             dtbs.writelines([name + "\n", age + "\n", gender + "\n", email + "\n", location + "\n", msg_lnk + "\n"])
             dtbs.close()
-            print("Registration completed.")
             Reg_2.close()
+            import os
+            os.system("python listings_page.py")
 
 
 if __name__ == "__main__":
