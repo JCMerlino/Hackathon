@@ -7,6 +7,7 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt4 import QtCore, QtGui
+from security import *
 
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
@@ -126,6 +127,9 @@ class Ui_Reg_1(object):
         if password != conf_password:
             self.msgBox("Warning!", "Both passwords do not match")
         else:
+        	dtbs = open("Database.txt", "a")
+        	dtbs.write("@" + username)
+        	dtbs.write()
             self.reg2Prompt()
 
 if __name__ == "__main__":

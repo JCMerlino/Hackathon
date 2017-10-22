@@ -7,6 +7,7 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt4 import QtCore, QtGui
+from security import *
 
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
@@ -128,7 +129,7 @@ class Ui_login(object):
     def loginCheck(self):
         username = self.u_name_input.text()
         password = self.pass_input.text()
-        print(username, password)
+        #if encrypt(password) ==
 
     def signUpPrompt(self):
         login.close()
@@ -137,7 +138,6 @@ class Ui_login(object):
 
 if __name__ == "__main__":
     import sys
-    database = []
     app = QtGui.QApplication(sys.argv)
     login = QtGui.QMainWindow()
     ui = Ui_login()
