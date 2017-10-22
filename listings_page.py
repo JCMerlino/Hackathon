@@ -63,6 +63,14 @@ class Ui_MainWindow(object):
         self.pushButton.setFont(font)
         self.pushButton.setStyleSheet(_fromUtf8("background-color: rgb(255, 34, 34);"))
         self.pushButton.setObjectName(_fromUtf8("pushButton"))
+        self.profile_btn = QtGui.QPushButton(self.centralwidget)
+        self.profile_btn.setGeometry(QtCore.QRect(650, 180, 341, 41))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        self.profile_btn.setFont(font)
+        self.profile_btn.setStyleSheet(_fromUtf8("background-color: rgb(255, 34, 34);"))
+        self.profile_btn.setObjectName(_fromUtf8("profile_btn"))
+        self.profile_btn.clicked.connect(self.see_profile)
         self.label_6 = QtGui.QLabel(self.centralwidget)
         self.label_6.setGeometry(QtCore.QRect(210, 250, 631, 500))
         font = QtGui.QFont()
@@ -113,11 +121,17 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow", None))
         self.pushButton.setText(_translate("MainWindow", "Post Listing", None))
+        self.profile_btn.setText(_translate("MainWindow", "Profile", None))
         self.label_2.setText(_translate("MainWindow", "YOUR EVENTS", None))
         self.menuProfile.setTitle(_translate("MainWindow", "Profile", None))
         self.actionView_your_profile.setText(_translate("MainWindow", "View your profile", None))
         self.actionSettings.setText(_translate("MainWindow", "Settings", None))
         self.actionLog_out.setText(_translate("MainWindow", "Log out", None))
+
+    def see_profile(self):
+        MainWindow.close()
+        import os
+        os.system("python profile_manager.py")
 
 if __name__ == "__main__":
     import sys
