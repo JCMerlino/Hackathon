@@ -149,10 +149,12 @@ class Ui_login(object):
         line = dtbs.readline()
         dtbs.close()
         if found and ((encrypt(password) + "\n") == line):
-            print("Log in succeeded!")
             File = open("Current_Username.txt", "w")
             File.write(username)
             File.close()
+            login.close()
+            import os
+            os.system("python listings_page.py")
         elif found and encrypt(password) != line:
             self.msgBox("Warning!", "Password incorrect.")
 

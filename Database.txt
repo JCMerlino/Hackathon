@@ -1,8 +1,0 @@
-@jorgecm
-110100 010000 0000100 0000110
-Jorge Correa
-18
-M
-jorge@email.com
-Cardiff
-m.me/user
