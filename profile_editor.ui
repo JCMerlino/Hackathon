@@ -57,6 +57,9 @@ background-color: rgb(0, 0, 0);</string>
     <property name="layoutDirection">
      <enum>Qt::LeftToRight</enum>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
     <property name="maximumDateTime">
      <datetime>
       <hour>23</hour>
@@ -84,9 +87,9 @@ background-color: rgb(0, 0, 0);</string>
    <widget class="QLabel" name="Date_of_Birth_Label">
     <property name="geometry">
      <rect>
-      <x>270</x>
+      <x>180</x>
       <y>210</y>
-      <width>150</width>
+      <width>240</width>
       <height>90</height>
      </rect>
     </property>
@@ -126,13 +129,21 @@ background-color: rgb(0, 0, 0);</string>
       <height>90</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);</string>
+    </property>
    </widget>
    <widget class="QLabel" name="First_Name_Label">
     <property name="geometry">
      <rect>
-      <x>270</x>
+      <x>220</x>
       <y>450</y>
-      <width>151</width>
+      <width>200</width>
       <height>90</height>
      </rect>
     </property>
@@ -154,13 +165,21 @@ background-color: rgb(0, 0, 0);</string>
       <height>90</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);</string>
+    </property>
    </widget>
    <widget class="QLabel" name="Last_Name_Label">
     <property name="geometry">
      <rect>
-      <x>270</x>
+      <x>220</x>
       <y>570</y>
-      <width>151</width>
+      <width>200</width>
       <height>90</height>
      </rect>
     </property>
@@ -181,6 +200,14 @@ background-color: rgb(0, 0, 0);</string>
       <width>340</width>
       <height>90</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);</string>
     </property>
    </widget>
    <widget class="QLabel" name="Messenger_Link_Label">
@@ -210,6 +237,14 @@ background-color: rgb(0, 0, 0);</string>
       <height>90</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);</string>
+    </property>
    </widget>
    <widget class="QCommandLinkButton" name="Update_All_Button">
     <property name="geometry">
@@ -222,6 +257,7 @@ background-color: rgb(0, 0, 0);</string>
     </property>
     <property name="font">
      <font>
+      <family>Segoe UI</family>
       <pointsize>18</pointsize>
       <weight>75</weight>
       <bold>true</bold>
@@ -229,6 +265,10 @@ background-color: rgb(0, 0, 0);</string>
     </property>
     <property name="cursor">
      <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 34, 34);
+color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>Update All</string>
@@ -248,6 +288,10 @@ background-color: rgb(0, 0, 0);</string>
       <pointsize>20</pointsize>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(255, 34, 34);</string>
+    </property>
     <property name="text">
      <string>Return to Profile</string>
     </property>
@@ -259,7 +303,7 @@ background-color: rgb(0, 0, 0);</string>
      <x>0</x>
      <y>0</y>
      <width>1111</width>
-     <height>18</height>
+     <height>31</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuProfile">

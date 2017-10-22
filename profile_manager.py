@@ -47,6 +47,7 @@ class Ui_MainWindow(object):
         self.Edit_profile_Button.setCursor(QtGui.QCursor(QtCore.Qt.OpenHandCursor))
         self.Edit_profile_Button.setStyleSheet(_fromUtf8("background-color: rgb(255, 255, 255);"))
         self.Edit_profile_Button.setObjectName(_fromUtf8("Edit_profile_Button"))
+        self.Edit_profile_Button.clicked.connect(self.Edit_Profile_Fun)
         self.Your_Listings_Button = QtGui.QPushButton(self.centralwidget)
         self.Your_Listings_Button.setGeometry(QtCore.QRect(120, 390, 381, 101))
         font = QtGui.QFont()
@@ -57,6 +58,7 @@ class Ui_MainWindow(object):
         self.Your_Listings_Button.setCursor(QtGui.QCursor(QtCore.Qt.OpenHandCursor))
         self.Your_Listings_Button.setStyleSheet(_fromUtf8("background-color: rgb(255, 255, 255);"))
         self.Your_Listings_Button.setObjectName(_fromUtf8("Your_Listings_Button"))
+        self.Your_Listings_Button.clicked.connect(self.Your_Listings_Fun)
         self.Post_Listing_Button = QtGui.QPushButton(self.centralwidget)
         self.Post_Listing_Button.setGeometry(QtCore.QRect(720, 390, 381, 101))
         font = QtGui.QFont()
@@ -67,6 +69,7 @@ class Ui_MainWindow(object):
         self.Post_Listing_Button.setCursor(QtGui.QCursor(QtCore.Qt.OpenHandCursor))
         self.Post_Listing_Button.setStyleSheet(_fromUtf8("background-color: rgb(255, 255, 255);"))
         self.Post_Listing_Button.setObjectName(_fromUtf8("Post_Listing_Button"))
+        self.Post_Listing_Button.clicked.connect(self.Post_Listing_Fun)
         self.View_Events_Button = QtGui.QPushButton(self.centralwidget)
         self.View_Events_Button.setGeometry(QtCore.QRect(720, 530, 381, 101))
         font = QtGui.QFont()
@@ -77,6 +80,7 @@ class Ui_MainWindow(object):
         self.View_Events_Button.setCursor(QtGui.QCursor(QtCore.Qt.OpenHandCursor))
         self.View_Events_Button.setStyleSheet(_fromUtf8("background-color: rgb(255, 255, 255);"))
         self.View_Events_Button.setObjectName(_fromUtf8("View_Events_Button"))
+        self.View_Events_Button.clicked.connect(self.View_Events_Fun)
         self.Manage_Listings_Button = QtGui.QPushButton(self.centralwidget)
         self.Manage_Listings_Button.setGeometry(QtCore.QRect(120, 530, 381, 101))
         font = QtGui.QFont()
@@ -87,6 +91,7 @@ class Ui_MainWindow(object):
         self.Manage_Listings_Button.setCursor(QtGui.QCursor(QtCore.Qt.OpenHandCursor))
         self.Manage_Listings_Button.setStyleSheet(_fromUtf8("background-color: rgb(255, 255, 255);"))
         self.Manage_Listings_Button.setObjectName(_fromUtf8("Manage_Listings_Button"))
+        self.Manage_Listings_Button.clicked.connect(self.Your_Listings_Fun)
         self.Listings_Button = QtGui.QPushButton(self.centralwidget)
         self.Listings_Button.setGeometry(QtCore.QRect(120, 680, 990, 100))
         font = QtGui.QFont()
@@ -97,6 +102,7 @@ class Ui_MainWindow(object):
         self.Listings_Button.setCursor(QtGui.QCursor(QtCore.Qt.OpenHandCursor))
         self.Listings_Button.setStyleSheet(_fromUtf8("background-color: rgb(255, 255, 255);"))
         self.Listings_Button.setObjectName(_fromUtf8("Listings_Button"))
+        self.Listings_Button.clicked.connect(self.Listings_Fun)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtGui.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 1280, 31))
@@ -128,13 +134,42 @@ class Ui_MainWindow(object):
         self.Your_Listings_Button.setText(_translate("MainWindow", "YOUR LISTINGS", None))
         self.Post_Listing_Button.setText(_translate("MainWindow", "POST A LISTING", None))
         self.View_Events_Button.setText(_translate("MainWindow", "VIEW YOUR EVENTS", None))
-        self.Manage_Listings_Button.setText(_translate("MainWindow", "MANAGE LISTINGS", None))
+        self.Manage_Listings_Button.setText(_translate("MainWindow", "VIEW PROFILE", None))
         self.Listings_Button.setText(_translate("MainWindow", "BACK TO LISTINGS", None))
         self.menuProfile.setTitle(_translate("MainWindow", "Profile", None))
         self.actionView_your_profile.setText(_translate("MainWindow", "View your profile", None))
         self.actionSettings.setText(_translate("MainWindow", "Settings", None))
         self.actionLog_out.setText(_translate("MainWindow", "Log out", None))
 
+    def Edit_Profile_Fun(self):
+        MainWindow.close()
+        import os
+        os.system("python profile_editor.py")
+
+    def Listings_Fun(self):
+        MainWindow.close()
+        import os
+        os.system("python listings_page.py")
+
+    def Manage_Listings_Fun(self):
+        MainWindow.close()
+        import os
+        os.system("python profile_manager.py")
+
+    def Post_Listing_Fun(self):
+        MainWindow.close()
+        import os
+        os.system("python post_a_listing.py")
+
+    def View_Events_Fun(self):
+        MainWindow.close()
+        import os
+        os.system("python profile_manager.py")
+
+    def Your_Listings_Fun(self):
+        MainWindow.close()
+        import os
+        os.system("python profile_manager.py")
 
 if __name__ == "__main__":
     import sys
@@ -144,4 +179,7 @@ if __name__ == "__main__":
     ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())
+
+
+
 
