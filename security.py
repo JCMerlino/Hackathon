@@ -1,4 +1,5 @@
 
+
 def encrypt(password):
 
     password_bytes = bytes(password, "ascii")
@@ -11,7 +12,7 @@ def encrypt(password):
         i += 1
         if i > 7:
             i = 0
-            
+
         if ch == "1":
             if xor_cipher[i] == "1":
                 ch = 0
@@ -24,6 +25,5 @@ def encrypt(password):
                 ch = 1
 
         encrypted_password += str(ch)
-
 
     return encrypted_password

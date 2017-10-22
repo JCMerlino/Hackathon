@@ -21,7 +21,7 @@ try:
     def _translate(context, text, disambig):
         return QtGui.QApplication.translate(context, text, disambig, _encoding)
 except AttributeError:
-    def _translate(context, text, disambig):
+    def _translate(context, text, disambig):  # lint:ok
         return QtGui.QApplication.translate(context, text, disambig)
 
 
@@ -127,9 +127,11 @@ class Ui_Reg_1(object):
         if password != conf_password:
             self.msgBox("Warning!", "Both passwords do not match")
         else:
-        	dtbs = open("Database.txt", "a")
-        	dtbs.write("@" + username)
-        	dtbs.write()
+            dtbs = open("Database.txt", "a")
+            dtbs.writelines(["@" + username + "\n", encrypt(password) + "\n"])
+            #dtbs.write("@" + username)
+            #dtbs.write(encrypt(password))
+            dtbs.close()
             self.reg2Prompt()
 
 if __name__ == "__main__":
@@ -140,4 +142,3 @@ if __name__ == "__main__":
     ui.setupUi(Reg_1)
     Reg_1.show()
     sys.exit(app.exec_())
-

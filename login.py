@@ -126,10 +126,33 @@ class Ui_login(object):
         self.signup_lbl.setText(_translate("login", "Don\'t have an account?", None))
         self.btn_sign_up.setText(_translate("login", "Sign up", None))
 
+    def msgBox(self, title, msg):
+        msgBox = QtGui.QMessageBox()
+        msgBox.setIcon(QtGui.QMessageBox.Warning)
+        msgBox.setWindowTitle(title)
+        msgBox.setText(msg)
+        msgBox.setStandardButtons(QtGui.QMessageBox.Ok)
+        msgBox.exec_()
+
     def loginCheck(self):
         username = self.u_name_input.text()
         password = self.pass_input.text()
-        #if encrypt(password) ==
+        dtbs = open("Database.txt", "r")
+        found = False
+        while not found:
+            line = dtbs.readline()
+            if line == ("@" + username + "\n"):
+                found = True
+                print("Found")
+            elif line == "":
+                self.msgBox("Warning!", "Username not found.")
+                break
+        line = dtbs.readline()
+        dtbs.close()
+        if found and ((encrypt(password) + "\n") == line):
+            print("Log in succeeded!")
+        elif found and encrypt(password) != line:
+            self.msgBox("Warning!", "Password incorrect.")
 
     def signUpPrompt(self):
         login.close()
