@@ -122,15 +122,26 @@ class Ui_Reg_1(object):
 
     def getInfo(self):
         username = self.usr_input.text()
+        dtbs = open("Database.txt", "r")
+        username_taken = False
+        while not username_taken:
+            line = dtbs.readline()
+            if line == ("@" + username + "\n"):
+                username_taken = True
+            elif line == "":
+                break
+        dtbs.close()
         password = self.pass_input.text()
         conf_password = self.conf_pass_input.text()
-        if password != conf_password:
-            self.msgBox("Warning!", "Both passwords do not match")
+        if username_taken:
+            self.msgBox("Warning!", "Username taken.")
+        elif password != conf_password:
+            self.msgBox("Warning!", "Both passwords do not match.")
+        elif (username == "") or (password == "") or (conf_password == ""):
+            self.msgBox("Warning!", "Please fill in all of the fields.")
         else:
             dtbs = open("Database.txt", "a")
             dtbs.writelines(["@" + username + "\n", encrypt(password) + "\n"])
-            #dtbs.write("@" + username)
-            #dtbs.write(encrypt(password))
             dtbs.close()
             self.reg2Prompt()
 

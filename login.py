@@ -21,7 +21,7 @@ try:
     def _translate(context, text, disambig):
         return QtGui.QApplication.translate(context, text, disambig, _encoding)
 except AttributeError:
-    def _translate(context, text, disambig):
+    def _translate(context, text, disambig):  # lint:ok
         return QtGui.QApplication.translate(context, text, disambig)
 
 
@@ -143,7 +143,6 @@ class Ui_login(object):
             line = dtbs.readline()
             if line == ("@" + username + "\n"):
                 found = True
-                print("Found")
             elif line == "":
                 self.msgBox("Warning!", "Username not found.")
                 break

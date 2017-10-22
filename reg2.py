@@ -16,10 +16,11 @@ except AttributeError:
 
 try:
     _encoding = QtGui.QApplication.UnicodeUTF8
+
     def _translate(context, text, disambig):
         return QtGui.QApplication.translate(context, text, disambig, _encoding)
 except AttributeError:
-    def _translate(context, text, disambig):
+    def _translate(context, text, disambig):  # lint:ok
         return QtGui.QApplication.translate(context, text, disambig)
 
 
@@ -71,6 +72,9 @@ class Ui_Reg_2(object):
         self.done_btn.setGeometry(QtCore.QRect(210, 640, 141, 61))
         self.done_btn.setStyleSheet(_fromUtf8("background-color:rgb(255,34,34)"))
         self.done_btn.setObjectName(_fromUtf8("done_btn"))
+        ############################## Button done event ###################################
+        self.done_btn.clicked.connect(self.getInfo)
+        #######################################################################################
         self.reg2_lbl = QtGui.QLabel(self.centralwidget)
         self.reg2_lbl.setGeometry(QtCore.QRect(50, 20, 451, 81))
         font = QtGui.QFont()
@@ -132,6 +136,30 @@ class Ui_Reg_2(object):
         self.msg_lnk_lbl.setText(_translate("Reg_2", "Messenger link", None))
         self.msg_lnk_input.setPlaceholderText(_translate("Reg_2", "e.g. m.me/facebookUsername", None))
 
+    def msgBox(self, title, msg):
+        msgBox = QtGui.QMessageBox()
+        msgBox.setIcon(QtGui.QMessageBox.Warning)
+        msgBox.setWindowTitle(title)
+        msgBox.setText(msg)
+        msgBox.setStandardButtons(QtGui.QMessageBox.Ok)
+        msgBox.exec_()
+
+    def getInfo(self):
+        name = self.name_input.text()
+        age = self.age_input.text()
+        gender = self.gender_input.text()
+        email = self.email_input.text()
+        location = self.loc_input.text()
+        msg_lnk = self.msg_lnk_input.text()
+        if (name == "") or (age == "") or (gender == "") or (email == "") or (location == "") or (msg_lnk == ""):
+            self.msgBox("Warning!", "Please fill in all of the fields.")
+        else:
+            dtbs = open("Database.txt", "a")
+            dtbs.writelines([name + "\n", age + "\n", gender + "\n", email + "\n", location + "\n", msg_lnk])
+            dtbs.close()
+            print("Registration completed.")
+            Reg_2.close()
+
 
 if __name__ == "__main__":
     import sys
@@ -141,4 +169,3 @@ if __name__ == "__main__":
     ui.setupUi(Reg_2)
     Reg_2.show()
     sys.exit(app.exec_())
-
